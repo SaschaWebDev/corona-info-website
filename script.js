@@ -1,4 +1,19 @@
-let schleswig, mecklenburg, hamburg, niedersachsen, bremen, brandenburg, berlin, sachsenAnhalt, nordrhein, rheinland, saarland, hessen, sachsen, thuringen, bayern, baden = 0;
+let schleswig = 91;
+let mecklenburg = 16;
+let hamburg = 139;
+let niedersachsen = 409;
+let bremen = 27;
+let brandenburg = 129;
+let berlin = 123;
+let sachsenAnhalt = 38;
+let nordrhein = 1117;
+let rheinland = 149;
+let saarland = 122;
+let hessen = 309;
+let sachsen = 148;
+let thuringen = 75;
+let bayern = 1700;
+let baden = 1281;
 
 var statesData = {
   type: 'FeatureCollection',
@@ -66911,23 +66926,6 @@ var kreisData = {
   ],
 };
 
-schleswig = 91;
-mecklenburg = 16;
-hamburg = 139;
-niedersachsen = 409;
-bremen = 27;
-brandenburg = 129;
-berlin = 123;
-sachsenAnhalt = 38;
-nordrhein = 1117;
-rheinland = 149;
-saarland = 122;
-hessen = 309;
-sachsen = 148;
-thuringen = 75;
-bayern = 1700;
-baden = 1281;
-
 var geojson;
 var map = L.map('mapid', {
   maxZoom: 20,
@@ -66960,7 +66958,7 @@ function getColor(d) {
     : d > 50
     ? '#FEB24C'
     : d > 10
-    ? '#eaeaeb'
+    ? '#fffdaf'
     : '#eaeaeb';
 }
 
