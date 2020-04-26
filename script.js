@@ -5377,7 +5377,7 @@ var statesData = {
         VARNAME_1: null,
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
-        deaths: branden,
+        deaths: brandenburg,
       },
       geometry: {
         type: 'Polygon',
