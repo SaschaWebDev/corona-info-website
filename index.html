@@ -9,16 +9,36 @@
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
+  <!-- <div class=skewed></div> -->
+  <div class=info-containert>
+  <div class="skewed-bg">
+    <div class="content">
+      <h1 class="title">Covid-19: Informationen zu Todeszahlen in Deutschland</h1>
+       <p class="text"></p>
+    </div>
+  </div>
   <div class="container">
     <!-- <div class="skewed"></div> -->
-    <h1>Corona Info Website</h1>
-    <div id="mapid"></div>
+    <div class="element-container">
+      <div class="left-container">
+        <img class="left-image" src="/images/reduce-risk.jpeg" alt="infographic about how to reduce risks">
+      </div>
+      <div id="mapid"></div>
+      <div class="right-container">
+        <div class="right-upper-container">
+        <img class="right-image" src="/images/high-risk.jpg" alt="infographic about how to reduce risks">
+        </div>
+        <div class="right-lower-container"></div>
+      </div>
+    </div>
+    
   </div>
+</div>
 </body>
+
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
   crossorigin=""></script>
@@ -28,6 +48,5 @@
   removeElements(document.querySelectorAll('.leaflet-control-attribution'));
   document.getElementById('mapid').style.cursor = 'crosshair !important';
 </script>
-
 
 </html>
