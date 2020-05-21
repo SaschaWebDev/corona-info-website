@@ -67103,13 +67103,13 @@ geojson = L.geoJson(statesData, {
     // layer.bindPopup(feature.geometry.coordinates.join(','));
     layer.bindPopup(createPopupText(feature.properties.NAME_1, numberWithDot(feature.properties.deaths), numberWithDot(feature.properties.cases), feature.properties.casesCapita.toString().replace('.', ',')), customOptions);
     layer.on('mouseover', function(){
-      layer.setStyle({weight: 2.5,});
+      layer.setStyle({weight: 2.5, opacity: 0.7});
       this.openPopup();
     })
     layer.on('mouseout', function(){
       // layer.setStyle({fillColor: 'blue'});
       this.closePopup();
-      layer.setStyle({weight: 1,});
+      layer.setStyle({weight: 1, opacity: 1});
     })
   }
 }).addTo(map);
