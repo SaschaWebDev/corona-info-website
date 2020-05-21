@@ -1,19 +1,54 @@
-let schleswig = 91;
-let mecklenburg = 16;
-let hamburg = 139;
-let niedersachsen = 409;
-let bremen = 27;
-let brandenburg = 129;
-let berlin = 123;
-let sachsenAnhalt = 38;
-let nordrhein = 1117;
-let rheinland = 149;
-let saarland = 122;
-let hessen = 309;
-let sachsen = 148;
-let thuringen = 75;
-let bayern = 1700;
-let baden = 1281;
+let schleswig = 130;
+let mecklenburg = 20;
+let hamburg = 236;
+let niedersachsen = 573;
+let bremen = 38;
+let brandenburg = 166;
+let berlin = 186;
+let sachsenAnhalt = 54;
+let nordrhein = 1544;
+let rheinland = 225;
+let saarland = 149;
+let hessen = 463;
+let sachsen = 201;
+let thuringen = 154;
+let bayern = 2407;
+let baden = 1737;
+
+let schleswigCase = 3034;
+let mecklenburgCase = 764;
+let hamburgCase = 5045;
+let niedersachsenCase = 11507;
+let bremenCase = 1276;
+let brandenburgCase = 3224;
+let berlinCase = 6552;
+let sachsenAnhaltCase = 1694;
+let nordrheinCase = 36888;
+let rheinlandCase = 6576;
+let saarlandCase = 2674;
+let hessenCase = 9580;
+let sachsenCase = 5181;
+let thuringenCase = 2819;
+let bayernCase = 46596;
+let badenCase = 35174;
+
+let schleswigCaseCapita = 4.49;
+let mecklenburgCaseCapita = 1.24;
+let hamburgCaseCapita = 12.82;
+let niedersachsenCaseCapita = 7.18;
+let bremenCaseCapita = 5.56;
+let brandenburgCaseCapita = 6.61;
+let berlinCaseCapita = 5.1;
+let sachsenAnhaltCaseCapita = 2.45;
+let nordrheinCaseCapita = 8.61;
+let rheinlandCaseCapita = 5.51;
+let saarlandCaseCapita = 15.04;
+let hessenCaseCapita = 7.39;
+let sachsenCaseCapita = 4.93;
+let thuringenCaseCapita = 7.19;
+let bayernCaseCapita = 18.41;
+let badenCaseCapita = 15.69;
+
 
 var statesData = {
   type: 'FeatureCollection',
@@ -33,6 +68,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: baden,
+        cases: badenCase,
+        casesCapita: badenCaseCapita,
       },
       geometry: {
         type: 'MultiPolygon',
@@ -2016,6 +2053,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: bayern,
+        cases: bayernCase,
+        casesCapita: bayernCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -5133,6 +5172,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: berlin,
+        cases: berlinCase,
+        casesCapita: berlinCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -5393,6 +5434,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: brandenburg,
+        cases: brandenburgCase,
+        casesCapita: brandenburgCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -7370,6 +7413,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: bremen,
+        cases: bremenCase,
+        casesCapita: bremenCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -7550,6 +7595,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: hamburg,
+        cases: hamburgCase,
+        casesCapita: hamburgCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -7811,6 +7858,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: hessen,
+        cases: hessenCase,
+        casesCapita: hessenCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -9421,6 +9470,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: mecklenburg,
+        cases: mecklenburgCase,
+        casesCapita: mecklenburgCaseCapita,
       },
       geometry: {
         type: 'MultiPolygon',
@@ -15637,6 +15688,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: niedersachsen,
+        cases: niedersachsenCase,
+        casesCapita: niedersachsenCaseCapita,
       },
       geometry: {
         type: 'MultiPolygon',
@@ -19590,6 +19643,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: nordrhein,
+        cases: nordrheinCase,
+        casesCapita: nordrheinCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -21469,6 +21524,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: rheinland,
+        cases: rheinlandCase,
+        casesCapita: rheinlandCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -22802,6 +22859,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: saarland,
+        cases: saarlandCase,
+        casesCapita: saarlandCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -23207,6 +23266,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: sachsenAnhalt,
+        cases: sachsenAnhaltCase,
+        casesCapita: sachsenAnhaltCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -24649,6 +24710,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: sachsen,
+        cases: sachsenCase,
+        casesCapita: sachsenCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -26365,6 +26428,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: schleswig,
+        cases: schleswigCase,
+        casesCapita: schleswigCaseCapita,
       },
       geometry: {
         type: 'MultiPolygon',
@@ -31174,6 +31239,8 @@ var statesData = {
         TYPE_1: 'Land',
         ENGTYPE_1: 'State',
         deaths: thuringen,
+        cases: thuringenCase,
+        casesCapita: thuringenCaseCapita,
       },
       geometry: {
         type: 'Polygon',
@@ -66931,7 +66998,7 @@ var map = L.map('mapid', {
   maxZoom: 20,
   minZoom: 6,
   zoomControl: false,
-}).setView([50.983334, 11.033333], 6);
+}).setView([51.983334, 10.933333], 6);
 
 L.tileLayer(
   'https://api.mapbox.com/styles/v1/lolbota/ck9g5lnbn3jb61iqguwjt1vqz.html?fresh=true&title=copy&access_token=pk.eyJ1IjoibG9sYm90YSIsImEiOiJjazlmeXBybnkwYXpqM2dta2w4enIwNnBqIn0.nJ9FneIE7F8B0_jE6tzuEA',
@@ -66945,17 +67012,17 @@ L.tileLayer(
 ).addTo(map);
 
 function getColor(d) {
-  return d > 1500
+  return d > 2000
     ? '#800026'
     : d > 1000
     ? '#BD0026'
-    : d > 200
+    : d > 400
     ? '#E31A1C'
-    : d > 125
+    : d > 200
     ? '#FC4E2A'
-    : d > 150
+    : d > 166
     ? '#FD8D3C'
-    : d > 50
+    : d > 100
     ? '#FEB24C'
     : d > 10
     ? '#fffdaf'
@@ -67015,23 +67082,45 @@ function highlightFeature(e) {
 //   });
 // }
 
+// caseCapita = deathCapita
+function createPopupText(state, deaths, cases, caseCapita) {
+  return `<b>${state}</b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br>`;
+}
+
+function numberWithDot(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+// specify popup options 
+var customOptions =
+    {
+    'maxWidth': '200%',
+    'width': '200%',
+    'className' : 'popupCustom'
+    }
+
 geojson = L.geoJson(statesData, {
   style: style,
   onEachFeature: function(feature, layer) {
     // layer.bindPopup(feature.geometry.coordinates.join(','));
+    layer.bindPopup(createPopupText(feature.properties.NAME_1, numberWithDot(feature.properties.deaths), numberWithDot(feature.properties.cases), feature.properties.casesCapita.toString().replace('.', ',')), customOptions);
     layer.on('mouseover', function(){
-      layer.setStyle({fillColor: 'grey'})
-      layer.bindPopup(feature.properties.NAME_1 + feature.properties.deaths);
+      // layer.setStyle({fillColor: 'grey'});
+      this.openPopup();
     })
     layer.on('mouseout', function(){
-      layer.setStyle({fillColor: 'blue'})
+      // layer.setStyle({fillColor: 'blue'});
+      this.closePopup();
     })
   }
 }).addTo(map);
 
-// geojson = L.geoJson(kreisData, {
-//   style: styleTwo,
-// }).addTo(map);
+//  geojson = L.geoJson(kreisData, {
+//    style: styleTwo,
+//  }).addTo(map);
+
+//disable scroll
+map.scrollWheelZoom.disable()
 
 var info = L.control();
 
