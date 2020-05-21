@@ -52,6 +52,10 @@
 <script src="script.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    Highcharts.setOptions({
+     colors: ['#829faf', '#518196', '#337289', '#003b4f', '#003043', '#02232f']
+    });
+
     var myChart =  Highcharts.chart('donut-container', {
   chart: {
     type: 'pie',

@@ -132,7 +132,9 @@ h2 {
 }
 
 .right-upper-container {
-  height: 50%;
+  height: 10%;
+  width: 40%;
+  margin-left: 30%;
   /* border: 1px solid orange; */
 }
 
@@ -283,4 +285,9 @@ h2 {
 
 .info.leaflet-control h4 {
   text-align: center;
+}
+
+.title {
+  margin-left: 5%;
+  font-size: 2.3rem;
 }
