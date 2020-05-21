@@ -66998,7 +66998,7 @@ var map = L.map('mapid', {
   maxZoom: 20,
   minZoom: 6,
   zoomControl: false,
-}).setView([51.983334, 10.933333], 6);
+}).setView([51.983334, 10.451526], 6);
 
 L.tileLayer(
   'https://api.mapbox.com/styles/v1/lolbota/ck9g5lnbn3jb61iqguwjt1vqz.html?fresh=true&title=copy&access_token=pk.eyJ1IjoibG9sYm90YSIsImEiOiJjazlmeXBybnkwYXpqM2dta2w4enIwNnBqIn0.nJ9FneIE7F8B0_jE6tzuEA',
@@ -67084,7 +67084,7 @@ function highlightFeature(e) {
 
 // caseCapita = deathCapita
 function createPopupText(state, deaths, cases, caseCapita) {
-  return `<b>${state}</b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br>`;
+  return `<div class="fade"><b><span class="state">${state}</span></b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br></div>`;
 }
 
 function numberWithDot(x) {
@@ -67094,8 +67094,6 @@ function numberWithDot(x) {
 // specify popup options 
 var customOptions =
     {
-    'maxWidth': '200%',
-    'width': '200%',
     'className' : 'popupCustom'
     }
 
@@ -67105,12 +67103,13 @@ geojson = L.geoJson(statesData, {
     // layer.bindPopup(feature.geometry.coordinates.join(','));
     layer.bindPopup(createPopupText(feature.properties.NAME_1, numberWithDot(feature.properties.deaths), numberWithDot(feature.properties.cases), feature.properties.casesCapita.toString().replace('.', ',')), customOptions);
     layer.on('mouseover', function(){
-      // layer.setStyle({fillColor: 'grey'});
+      layer.setStyle({weight: 2.5,});
       this.openPopup();
     })
     layer.on('mouseout', function(){
       // layer.setStyle({fillColor: 'blue'});
       this.closePopup();
+      layer.setStyle({weight: 1,});
     })
   }
 }).addTo(map);
@@ -67148,7 +67147,7 @@ info.update = function (props) {
         '</b><br />' +
         props.density +
         ' people / mi<sup>2</sup>'
-      : 'Bewege die Maus über ein Bundesland');
+      : 'Über Bundesland hovern');
 };
 
 function highlightFeature(e) {
@@ -67175,3 +67174,15 @@ info.addTo(map);
 // map.scrollWheelZoom.disable();
 // map.boxZoom.disable();
 // map.keyboard.disable();
+
+
+ var southWest = L.latLng(46.63794, 5.068469),
+ northEast = L.latLng(56.656897, 16.471155);
+ //northEast = L.latLng(64.983334, 2.922572);
+
+ var bounds = L.latLngBounds(northEast, southWest);
+
+ map.setMaxBounds(bounds);
+ map.on('drag', function() {
+    map.panInsideBounds(bounds, { animate: false });
+});

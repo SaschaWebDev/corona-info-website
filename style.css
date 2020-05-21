@@ -204,6 +204,7 @@ h2 {
 .flex-between {
   display: flex;
   justify-content: space-between;
+  font-size: 1rem;
 }
 
 .deaths {
@@ -224,4 +225,13 @@ h2 {
 
 .leaflet-control-zoom {
   display: none;
+}
+
+.popupCustom {
+  width: 12rem !important;
+  min-width: 12rem !important;
+}
+
+.state {
+  font-size: 1rem;
 }
