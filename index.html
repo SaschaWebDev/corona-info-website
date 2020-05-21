@@ -8,12 +8,15 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <!-- <div class=skewed></div> -->
-  <div class=info-containert>
+  <div class=info-containert> 
   <div class="skewed-bg">
     <div class="content">
       <h1 class="title">Covid-19: Informationen zu Todeszahlen in Deutschland</h1>
@@ -31,7 +34,14 @@
         <div class="right-upper-container">
         <img class="right-image" src="/images/risk-group-stairs.png" alt="infographic about how to reduce risks">
         </div>
-        <div class="right-lower-container"></div>
+        <div class="right-lower-container">
+          <figure class="highcharts-figure">
+            <div id="donut-container"></div>
+            <p class="highcharts-description">
+              Demografische Daten und Symptome/Manifestationen COVID-19-Erkrankter aus Deutschland (Stand 21.05.2020)
+            </p>
+          </figure>
+        </div>
       </div>
     </div>
     
@@ -39,14 +49,51 @@
 </div>
 </body>
 
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-  crossorigin=""></script>
 <script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var myChart =  Highcharts.chart('donut-container', {
+  chart: {
+    type: 'pie',
+    options3d: {
+      enabled: true,
+      alpha: 45
+    }
+  },
+  title: {
+    text: 'COVID-19 Erkrankte'
+  },
+  subtitle: {
+    text: 'Altersverteilung'
+  },
+  plotOptions: {
+    pie: {
+      innerSize: 100,
+      depth: 45
+    }
+  },
+  series: [{
+    name: 'Altersverteilung in %',
+    data:  [['unter 10 Jahre', 1.7],
+      ['10 - 19 Jahre', 4,2],
+      ['20 - 49 Jahre', 43],
+      ['50 - 69 Jahre', 32],
+      ['70 - 89 Jahre', 16],
+      ['über 90 Jahre', 2.8],
+      ]
+  }]
+});
+  });
+</script>
 <script>
   const removeElements = (elms) => elms.forEach((el) => el.remove());
   removeElements(document.querySelectorAll('.leaflet-control-attribution'));
   document.getElementById('mapid').style.cursor = 'crosshair !important';
 </script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 </html>

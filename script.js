@@ -66998,32 +66998,40 @@ function highlightFeature(e) {
   info.update(layer.feature.properties);
 }
 
-function zoomToFeature(e) {
-  map.fitBounds(e.target.getBounds());
-}
+// function zoomToFeature(e) {
+//   map.fitBounds(e.target.getBounds());
+// }
 
-function resetHighlight(e) {
-  geojson.resetStyle(e.target);
-  info.update();
-}
+// function resetHighlight(e) {
+//   geojson.resetStyle(e.target);
+//   info.update();
+// }
 
-function onEachFeature(feature, layer) {
-  layer.on({
-    mouseover: highlightFeature,
-    mouseout: resetHighlight,
-    click: zoomToFeature,
-  });
-}
+// function onEachFeature(feature, layer) {
+//   layer.on({
+//     mouseover: highlightFeature,
+//     mouseout: resetHighlight,
+//     click: zoomToFeature,
+//   });
+// }
 
 geojson = L.geoJson(statesData, {
   style: style,
-  onEachFeature: onEachFeature,
+  onEachFeature: function(feature, layer) {
+    // layer.bindPopup(feature.geometry.coordinates.join(','));
+    layer.on('mouseover', function(){
+      layer.setStyle({fillColor: 'grey'})
+      layer.bindPopup(feature.properties.NAME_1 + feature.properties.deaths);
+    })
+    layer.on('mouseout', function(){
+      layer.setStyle({fillColor: 'blue'})
+    })
+  }
 }).addTo(map);
 
-geojson = L.geoJson(kreisData, {
-  style: styleTwo,
-  onEachFeature: onEachFeature,
-}).addTo(map);
+// geojson = L.geoJson(kreisData, {
+//   style: styleTwo,
+// }).addTo(map);
 
 var info = L.control();
 
@@ -67063,7 +67071,7 @@ function resetHighlight(e) {
 }
 
 info.addTo(map);
-map.removeLayer(grayscale);
+// map.removeLayer(grayscale);
 
 // const attribution = document.getElementsByClassName(
 //   'leaflet-control-attribution'
