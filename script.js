@@ -67033,8 +67033,8 @@ function style(feature) {
   return {
     fillColor: getColor(feature.properties.deaths),
     weight: 1,
-    opacity: 1,
-    color: 'black',
+    opacity: 0.4,
+    color: 'white',
     dashArray: '0',
     fillOpacity: 0.7,
   };
@@ -67054,7 +67054,7 @@ function highlightFeature(e) {
 
   layer.setStyle({
     weight: 5,
-    color: '#666',
+    color: 'white',
     dashArray: '',
     fillOpacity: 0.7,
   });
@@ -67084,7 +67084,7 @@ function highlightFeature(e) {
 
 // caseCapita = deathCapita
 function createPopupText(state, deaths, cases, caseCapita) {
-  return `<div class="fade"><b><span class="state">${state}</span></b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br></div>`;
+  return `<div class="fade"><b><span class="state">${state}</span></b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd:</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br></div>`;
 }
 
 function numberWithDot(x) {
@@ -67103,13 +67103,13 @@ geojson = L.geoJson(statesData, {
     // layer.bindPopup(feature.geometry.coordinates.join(','));
     layer.bindPopup(createPopupText(feature.properties.NAME_1, numberWithDot(feature.properties.deaths), numberWithDot(feature.properties.cases), feature.properties.casesCapita.toString().replace('.', ',')), customOptions);
     layer.on('mouseover', function(){
-      layer.setStyle({weight: 2.5, opacity: 0.7});
+      layer.setStyle({weight: 2.5, opacity: 0.7, color: 'white'});
       this.openPopup();
     })
     layer.on('mouseout', function(){
       // layer.setStyle({fillColor: 'blue'});
       this.closePopup();
-      layer.setStyle({weight: 1, opacity: 1});
+      layer.setStyle({weight: 1, opacity: 0.4});
     })
   }
 }).addTo(map);

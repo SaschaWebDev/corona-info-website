@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: white;
+  background-color: #3a3a3c;
   font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: top;
@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: #3a3a3c;
   margin-top: 5rem;
   margin-bottom: 5rem;
   display: flex;
@@ -30,7 +30,10 @@ body {
 }
 
 .left-image {
-  width: 60%;
+  max-width:130%;
+  max-height:130%;
+  min-height:28rem;
+  min-width:38rem;
 }
 
 h2 {
@@ -42,8 +45,12 @@ h2 {
   height: 49rem;
   max-height: 49rem;
   max-width: 45rem;
+  min-height: 49rem;
+  min-width: 45rem;
   width: 45rem;
-  border: 1px solid red;
+  /* border: 1px solid green; */
+  transform: scale(1.4);
+  margin-left: 7%;
 }
 
 .leaflet-container {
@@ -102,25 +109,26 @@ h2 {
 
 .element-container {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .left-container {
-  margin-left:8%;
-  width: 30%;
-  height: 30rem;
-  margin-top: 5rem;
+  margin-left:2%;
+  max-height:27rem;
+  max-width: 40rem;
   /* border: 1px solid red; */
-  display: flex;
-  justify-content: center;
+  margin-top: 12%;
+  margin-right: 5%;
 }
 
 .right-container {
-  width: 30rem;
+  width: 50rem;
   height: 30rem;
-  margin-top: 5rem;
+  margin-top: 11%;
   /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
+  /* border: 1px solid blue; */
 }
 
 .right-upper-container {
@@ -198,7 +206,9 @@ h2 {
   background: #f1f7ff;
 }
 #donut-container {
-  height: 300px; 
+    width:100% !important;
+    height:100% !important;
+    margin-right: 10% !important;
 }
 
 .flex-between {
@@ -216,7 +226,7 @@ h2 {
 }
 
 .deathCapita {
-  color: orange;
+  color: rgb(202, 135, 9);
 }
 
 .result {
@@ -234,4 +244,43 @@ h2 {
 
 .state {
   font-size: 1rem;
+}
+
+.highcharts-exporting-group {
+  display: none;
+}
+
+.Chart.menu {
+  display: none;
+}
+
+.highcharts-contextmenu {
+  display: none;
+}
+
+.highcharts-menu {
+  display: none;
+}
+
+.highcharts-credits {
+  display: none;
+}
+
+.highcharts-description {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaflet-top.leaflet-right {
+  margin-top: 100% !important;
+  margin-right: 38% !important;
+}
+
+.info.leaflet-control h4 {
+  text-align: center;
 }
