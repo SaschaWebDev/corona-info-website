@@ -299,3 +299,45 @@ h2 {
   font-size: 0.6rem;
   color: grey;
 }
+
+@media screen and (max-width: 860px) {
+  .element-container {
+    flex-direction: column;
+    
+  }
+
+  .left-container {
+    margin-left:2%;
+    max-height:27rem;
+    max-width: 40rem;
+    /* border: 1px solid red; */
+    margin-top: 12%;
+    margin-right: 5%;
+  }
+
+  .left-image {
+    max-width:100%;
+    max-height:100%;
+    min-height:5rem;
+    min-width:5rem;
+    margin-left: 15%;
+  }
+
+  body {
+    height: 100%;
+    width: 100vw;
+    min-height: 100%;
+    min-width: 100vw;
+    max-width: 100vW;
+    margin-left: 50%;
+  }
+
+      
+  .skewed-bg {
+    width: 100%;
+  }
+
+  #mapid {
+    transform: scale(1) !important;
+  }
+}
