@@ -113,10 +113,10 @@ h2 {
 }
 
 .left-container {
-  margin-left:2%;
+  margin-left:10%;
   max-height:27rem;
   max-width: 40rem;
-  margin-top: -4rem;
+  margin-top: -6rem;
   /* border: 1px solid red; */
 }
 
@@ -292,6 +292,7 @@ h2 {
 .title {
   margin-left: 5%;
   font-size: 2.3rem;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .disclaim {
@@ -305,6 +306,7 @@ h2 {
   font-size: 1.5rem;
   font-weight: 500;
   z-index: 0 !important;
+  margin-bottom: 0.8rem;
 }
 
 .leaflet-control span {
@@ -378,7 +380,7 @@ h2 {
 }
 
 .highcharts-data-table table {
-	font-family: 'Roboto', sans-serif !important;
+	font-family: 'Roboto' !important;
 	border-collapse: collapse;
 	border: 1px solid #EBEBEB;
 	margin: 10px auto;
@@ -407,4 +409,9 @@ h2 {
 
 .highcharts-background {
   fill: transparent !important;
+  color: #0c1b20;
+}
+
+.secondchart {
+  margin-top: 3rem;
 }

@@ -29,8 +29,11 @@
     <div class="element-container">
       <div class="left-container">
         <!-- <img class="left-image" src="/images/risk-group-stairs.png" alt="infographic about how to reduce risks"> -->
-        <figure class="highcharts-figure">
+        <figure class="highcharts-figure secondchart">
           <div id="wordcloud"></div>
+          <p class="highcharts-description">
+            Die Größe der Begriffe hängt von der von uns wahrgenommenen Erwähnung in den Nachrichten ab.
+          </p>
           <figure class="highcharts-figure">
             <div id="donut-container"></div>
             <p class="highcharts-description">
@@ -50,10 +53,10 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     Highcharts.setOptions({
-     colors: ['#829faf', '#518196', '#337289', '#064b62', '#003043', '#02232f']
+      colors: ['#c4c38d', '#c38e47', '#c3743c', '#c2482f', '#b02326','#c41d1d']
     });
 
-    var myChart =  Highcharts.chart('donut-container', {
+    var myChart = Highcharts.chart('donut-container', {
   chart: {
     type: 'pie',
     backgroundColor: 'transparent',
@@ -67,7 +70,7 @@
     style: {
         fontFamily: 'Roboto',
         color: "white",
-        fontSize: '1.8rem' 
+        fontSize: '2.1rem' 
     }
   },
   subtitle: {
@@ -75,7 +78,7 @@
     style: {
         fontFamily: 'Roboto',
         color: "white",
-        fontSize: '1.3rem'
+        fontSize: '1.4rem'
     }
   },
   legend: {
@@ -112,7 +115,7 @@
 
   // Word CLoud
   var text = ' Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Raucher, Raucher, Raucher, Raucher, Raucher, Raucher, Raucher, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Herzschwäche, Herzschwäche, Herzschwäche, Herzschwäche, Herzschwäche, Diabetes, Diabetes, Diabetes, Diabetes, adipöse Personen, adipöse Personen, adipöse Personen, adipöse Personen, adipöse Personen, Krebserkrankung, Krebserkrankung, Krebserkrankung, Krebserkrankung';
-var lines = text.split(/[,.]+/g),
+  var lines = text.split(/[,.]+/g),
   data = Highcharts.reduce(lines, function (arr, word) {
     var obj = Highcharts.find(arr, function (obj) {
       return obj.name === word;
@@ -145,24 +148,37 @@ Highcharts.chart('wordcloud', {
     type: 'wordcloud',
     data: data,
     name: 'Occurrences',
+    style: {
+        fontFamily: 'Roboto',
+    }
   }],
   title: {
     text: 'COVID-19 Risikogruppen',
     style: {
         fontFamily: 'Roboto',
         color: "white",
-        fontSize: '1.8rem' 
+        fontSize: '2.1rem' 
     }
-  }
+  },
+  subtitle: {
+    text: 'Gemäß Nachrichtenerwähnung',
+    style: {
+        fontFamily: 'Roboto',
+        color: "white",
+        fontSize: '1.4rem'
+    }
+  },
 });
 });
 
 </script>
+
 <script>
   const removeElements = (elms) => elms.forEach((el) => el.remove());
   removeElements(document.querySelectorAll('.leaflet-control-attribution'));
   document.getElementById('mapid').style.cursor = 'crosshair !important';
 </script>
+
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>

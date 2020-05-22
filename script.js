@@ -67011,21 +67011,41 @@ L.tileLayer(
   }
 ).addTo(map);
 
+// ORANGE
+// function getColor(d) {
+//   return d > 2000
+//     ? '#800026'
+//     : d > 1000
+//     ? '#BD0026'
+//     : d > 400
+//     ? '#E31A1C'
+//     : d > 200
+//     ? '#FC4E2A'
+//     : d > 166
+//     ? '#FD8D3C'
+//     : d > 100
+//     ? '#FEB24C'
+//     : d > 10
+//     ? '#fffdaf'
+//     : '#eaeaeb';
+// }
+
+//   colors: ['#829faf', '#518196', '#337289', '#064b62', '#003043','#02232f'],
 function getColor(d) {
   return d > 2000
-    ? '#800026'
+    ? '#0c1b20'
     : d > 1000
-    ? '#BD0026'
+    ? '#02232f'
     : d > 400
-    ? '#E31A1C'
+    ? '#003043'
     : d > 200
-    ? '#FC4E2A'
+    ? '#064b62'
     : d > 166
-    ? '#FD8D3C'
+    ? '#337289'
     : d > 100
-    ? '#FEB24C'
+    ? '#518196'
     : d > 10
-    ? '#fffdaf'
+    ? '#829faf'
     : '#eaeaeb';
 }
 
@@ -67140,7 +67160,7 @@ L.control
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
   this._div.innerHTML =
-    '<h4>Corona Todeszahlen</h4>' +
+    '<h4>COVID-19 Todeszahlen</h4>' +
     (props
       ? '<b>' +
         props.name +
