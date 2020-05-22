@@ -67084,7 +67084,7 @@ function highlightFeature(e) {
 
 // caseCapita = deathCapita
 function createPopupText(state, deaths, cases, caseCapita) {
-  return `<div class="fade"><b><span class="state">${state}</span></b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd:</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br></div>`;
+  return `<div class="fade"><b><span class="state">${state}</span></b></br><hr><div class="flex-between deaths"><span>Tode:</span><span class="result">${deaths}</span></div></br><div class="flex-between deathCapita"><span>Tode/100Tsd:</span><span class="result">${caseCapita}</span></div></br><div class="flex-between cases"><span>Fälle:</span><span class="result">${cases}</span></div></br><span class="disclaim">Stand: Risk Layer 21.05.2020</span></div>`;
 }
 
 function numberWithDot(x) {
@@ -67147,7 +67147,7 @@ info.update = function (props) {
         '</b><br />' +
         props.density +
         ' people / mi<sup>2</sup>'
-      : 'Über Bundesland hovern');
+      : 'Über Bundesland hovern</br>');
 };
 
 function highlightFeature(e) {
