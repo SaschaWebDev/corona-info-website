@@ -41,9 +41,6 @@
         </div>
       </div>
     </div>
-    <div class="right-upper-container">
-      <img class="right-image" src="/images/reduce-risk.png" alt="infographic about how to reduce risks">
-      </div>
   </div>
  
 </div>
@@ -53,7 +50,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     Highcharts.setOptions({
-     colors: ['#829faf', '#518196', '#337289', '#003b4f', '#003043', '#02232f']
+     colors: ['#829faf', '#518196', '#337289', '#064b62', '#003043', '#02232f']
     });
 
     var myChart =  Highcharts.chart('donut-container', {
@@ -69,14 +66,16 @@
     text: 'COVID-19 Erkrankte',
     style: {
         fontFamily: 'Roboto',
-        color: "white"
+        color: "white",
+        fontSize: '1.8rem' 
     }
   },
   subtitle: {
     text: 'Altersverteilung',
     style: {
         fontFamily: 'Roboto',
-        color: "white"
+        color: "white",
+        fontSize: '1.3rem'
     }
   },
   legend: {
