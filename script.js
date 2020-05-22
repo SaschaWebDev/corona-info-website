@@ -67147,7 +67147,7 @@ info.update = function (props) {
         '</b><br />' +
         props.density +
         ' people / mi<sup>2</sup>'
-      : 'Über Bundesland hovern</br>');
+      : '<span>Über Bundesland hovern</span></br>');
 };
 
 function highlightFeature(e) {

@@ -31,25 +31,15 @@
         <!-- <img class="left-image" src="/images/risk-group-stairs.png" alt="infographic about how to reduce risks"> -->
         <figure class="highcharts-figure">
           <div id="wordcloud"></div>
-          <p class="highcharts-description">
-            Word clouds are used to visualize how often each word in a
-            text occurs. This example uses an excerpt from the popular
-            "Lorem Ipsum" text. Words that appear often will appear
-            larger.
-          </p>
-        </figure>
-      </div>
-      <div id="mapid"></div>
-      <div class="right-container">
-        <div class="right-lower-container">
           <figure class="highcharts-figure">
             <div id="donut-container"></div>
             <p class="highcharts-description">
               Demografische Daten und Symptome/Manifestationen COVID-19-Erkrankter aus Deutschland (Stand: RKI 14.05.2020)
             </p>
           </figure>
-        </div>
+        </figure>
       </div>
+      <div id="mapid"></div>
     </div>
   </div>
  
@@ -121,8 +111,8 @@
  
 
   // Word CLoud
-  var text = 'Test Test Test Anderes Anderes Alleine einzig artig bla';
-var lines = text.split(/[,\. ]+/g),
+  var text = ' Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Raucher, Raucher, Raucher, Raucher, Raucher, Raucher, Raucher, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Herzschwäche, Herzschwäche, Herzschwäche, Herzschwäche, Herzschwäche, Diabetes, Diabetes, Diabetes, Diabetes, adipöse Personen, adipöse Personen, adipöse Personen, adipöse Personen, adipöse Personen, Krebserkrankung, Krebserkrankung, Krebserkrankung, Krebserkrankung';
+var lines = text.split(/[,.]+/g),
   data = Highcharts.reduce(lines, function (arr, word) {
     var obj = Highcharts.find(arr, function (obj) {
       return obj.name === word;
@@ -139,9 +129,10 @@ var lines = text.split(/[,\. ]+/g),
     return arr;
   }, []);
 
+  //BLAU
+  //   colors: ['#829faf', '#518196', '#337289', '#064b62', '#003043','#02232f'],
 Highcharts.chart('wordcloud', {
-  colors: ['#2f7ed8', '#0d233a', '#8bbc21', '#910000', '#1aadce',
-        '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'],
+  colors: ['#c4c38d', '#c38e47', '#c3743c', '#c2482f', '#b02326','#c41d1d'],
   accessibility: {
     screenReaderSection: {
       beforeChartFormat: '<h5>{chartTitle}</h5>' +
@@ -156,7 +147,12 @@ Highcharts.chart('wordcloud', {
     name: 'Occurrences',
   }],
   title: {
-    text: 'Wordcloud of Lorem Ipsum'
+    text: 'COVID-19 Risikogruppen',
+    style: {
+        fontFamily: 'Roboto',
+        color: "white",
+        fontSize: '1.8rem' 
+    }
   }
 });
 });
