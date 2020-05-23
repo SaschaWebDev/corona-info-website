@@ -94,7 +94,7 @@
     }
   },
   series: [{
-    name: 'Altersverteilung in %',
+    name: 'Erkrankte in %',
     dataLabels: {
                 style: {
                     fontSize: 20,
@@ -136,6 +136,7 @@
   //   colors: ['#829faf', '#518196', '#337289', '#064b62', '#003043','#02232f'],
 Highcharts.chart('wordcloud', {
   colors: ['#c4c38d', '#c38e47', '#c3743c', '#c2482f', '#b02326','#c41d1d'],
+  tooltip: { enabled: false },
   accessibility: {
     screenReaderSection: {
       beforeChartFormat: '<h5>{chartTitle}</h5>' +
@@ -150,7 +151,7 @@ Highcharts.chart('wordcloud', {
     name: 'Occurrences',
     style: {
         fontFamily: 'Roboto',
-    }
+    },
   }],
   title: {
     text: 'COVID-19 Risikogruppen',
