@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corona Virus Info Website</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+  <link rel="icon" type="image/png" href="public/corona-favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- <div class=skewed></div> -->
+  <div class=info-containert> 
+  <div class="skewed-bg">
+    <div class="content">
+      <h1 class="title">Covid-19: Informationen zu Todeszahlen in Deutschland</h1>
+       <p class="text"></p>
+    </div>
+  </div>
+  <div class="container">
+    <!-- <div class="skewed"></div> -->
+    <div class="element-container">
+      <div class="left-container">
+        <!-- <img class="left-image" src="/images/risk-group-stairs.png" alt="infographic about how to reduce risks"> -->
+        <figure class="highcharts-figure secondchart">
+          <div id="wordcloud"></div>
+          <figure class="highcharts-figure down">
+            <div id="donut-container"></div>
+            <p class="highcharts-description">
+              Demografische Daten und Symptome/Manifestationen COVID-19-Erkrankter aus Deutschland (Stand: RKI 14.05.2020)
+            </p>
+          </figure>
+        </figure>
+      </div>
+      <div id="mapid"></div>
+    </div>
+  </div>
+ 
+</div>
+</body>
+
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Highcharts.setOptions({
+      colors: ['#c4c38d', '#c38e47', '#c3743c', '#c2482f', '#b02326','#c41d1d']
+    });
+
+    var myChart = Highcharts.chart('donut-container', {
+  chart: {
+    type: 'pie',
+    backgroundColor: 'transparent',
+    options3d: {
+      enabled: true,
+      alpha: 45,
+    }
+  },
+  title: {
+    text: 'COVID-19 Erkrankte',
+    style: {
+        fontFamily: 'Roboto',
+        color: "white",
+        fontSize: '2.1rem' 
+    }
+  },
+  subtitle: {
+    text: 'Altersverteilung',
+    style: {
+        fontFamily: 'Roboto',
+        color: "white",
+        fontSize: '1.4rem'
+    }
+  },
+  legend: {
+        itemStyle: {
+            color: 'red',
+            fontWeight: 'bold'
+        }
+    },
+  plotOptions: {
+    pie: {
+      innerSize: 100,
+      depth: 45
+    }
+  },
+  series: [{
+    name: 'Erkrankte in %',
+    dataLabels: {
+                style: {
+                    fontSize: 20,
+                    color: 'white',
+                    fontFamily: 'Roboto',
+                }
+            },
+    data:  [['unter 10 Jahre', 1.9],
+      ['10 bis 19 Jahre', 4.3],
+      ['20 bis 49 Jahre', 43],
+      ['50 bis 69 Jahre', 32],
+      ['70 bis 89 Jahre', 16],
+      ['über 90 Jahre', 2.8],
+      ]
+  }],
+});
+ 
+
+  // Word CLoud
+  var text = ' Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Hohes Alter, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Immundefekt, Raucher, Raucher, Raucher, Raucher, Raucher, Raucher, Raucher, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lebererkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Lungenerkrankungen, Herzschwäche, Herzschwäche, Herzschwäche, Herzschwäche, Herzschwäche, Diabetes, Diabetes, Diabetes, Diabetes, adipöse Personen, adipöse Personen, adipöse Personen, adipöse Personen, adipöse Personen, Krebserkrankung, Krebserkrankung, Krebserkrankung, Krebserkrankung';
+  var lines = text.split(/[,.]+/g),
+  data = Highcharts.reduce(lines, function (arr, word) {
+    var obj = Highcharts.find(arr, function (obj) {
+      return obj.name === word;
+    });
+    if (obj) {
+      obj.weight += 1;
+    } else {
+      obj = {
+        name: word,
+        weight: 1
+      };
+      arr.push(obj);
+    }
+    return arr;
+  }, []);
+
+  //BLAU
+  //   colors: ['#829faf', '#518196', '#337289', '#064b62', '#003043','#02232f'],
+Highcharts.chart('wordcloud', {
+  colors: ['#c4c38d', '#c38e47', '#c3743c', '#c2482f', '#b02326','#c41d1d'],
+  tooltip: { enabled: false },
+  accessibility: {
+    screenReaderSection: {
+      beforeChartFormat: '<h5>{chartTitle}</h5>' +
+        '<div>{chartSubtitle}</div>' +
+        '<div>{chartLongdesc}</div>' +
+        '<div>{viewTableButton}</div>'
+    }
+  },
+  series: [{
+    type: 'wordcloud',
+    data: data,
+    name: 'Occurrences',
+    style: {
+        fontFamily: 'Roboto',
+    },
+  }],
+  title: {
+    text: 'COVID-19 Risikogruppen',
+    style: {
+        fontFamily: 'Roboto',
+        color: "white",
+        fontSize: '2.1rem',
+    }
+  },
+  subtitle: {
+    text: 'Gemäß Nachrichtenerwähnung',
+    style: {
+        fontFamily: 'Roboto',
+        color: "white",
+        fontSize: '1.4rem'
+    }
+  },
+});
+});
+
+</script>
+
+<script>
+  const removeElements = (elms) => elms.forEach((el) => el.remove());
+  removeElements(document.querySelectorAll('.leaflet-control-attribution'));
+  document.getElementById('mapid').style.cursor = 'crosshair !important';
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+
+<div id="container"></div>
+<div id="container2"></div>
+
+</html>

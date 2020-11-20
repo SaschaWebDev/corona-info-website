@@ -1,0 +1,25 @@
+{
+  "name": "corona-info-website",
+  "version": "1.0.0",
+  "description": "A small website providing infographics and charts about the corona virus.",
+  "main": "script.js",
+  "scripts": {
+    "build": "tailwindcss build src/tailwind.css -o public/css/tailwind.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaschaWebDev/corona-info-website.git"
+  },
+  "keywords": [],
+  "author": "Sascha Majewsky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SaschaWebDev/corona-info-website/issues"
+  },
+  "homepage": "https://github.com/SaschaWebDev/corona-info-website#readme",
+  "dependencies": {
+    "@tailwindcss/ui": "^0.3.0",
+    "lodash": "^4.17.15",
+    "tailwindcss": "^1.4.6"
+  }
+}
